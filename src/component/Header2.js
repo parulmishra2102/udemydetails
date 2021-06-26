@@ -5,6 +5,16 @@ const Header2 = (props) => {
   const clickEventHandler = () => {
     props.logout();
   };
+ const clickAdminHandler = (event) => {
+ 
+
+  props.admin1()
+
+ }
+ const userClick = () =>{
+props.user()
+
+ }
 
   return (
     <>
@@ -14,8 +24,8 @@ const Header2 = (props) => {
         props.dataHeading.password !== '' ? (
           <Col span={6} offset={18}>
             <Menu mode="horizontal">
-              <Menu.Item>user</Menu.Item>
-              <Menu.Item>admin</Menu.Item>
+              <Menu.Item onClick={userClick}>user</Menu.Item>
+              <Menu.Item onClick={clickAdminHandler}>admin</Menu.Item>
               <Menu.Item onClick={clickEventHandler}>Logout</Menu.Item>
             </Menu>
           </Col>
